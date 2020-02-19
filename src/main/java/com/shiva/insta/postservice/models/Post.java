@@ -62,6 +62,9 @@ public class Post {
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="post", cascade=CascadeType.ALL)
 	private List<Like> likes;
+	
+	@Column(name="image", nullable=true, updatable=true)
+	private String image;
 
 	
 	/*
@@ -170,6 +173,22 @@ public class Post {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}	
+
+	public List<Like> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(List<Like> likes) {
+		this.likes = likes;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 

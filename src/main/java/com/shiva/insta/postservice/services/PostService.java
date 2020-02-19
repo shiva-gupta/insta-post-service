@@ -5,6 +5,8 @@ import java.util.List;
 import com.shiva.insta.postservice.models.Post;
 
 public interface PostService {
+	
+	public void initDir();
 
 	public Post save(Post post);
 	
@@ -13,5 +15,9 @@ public interface PostService {
 	
 	public void deleteAll();
 	public void deleteById(Long id);
+	
+	public String savePostImage(String image, Long userId);
+	
+	public String base64Encode(String filePath);
 	
 }
